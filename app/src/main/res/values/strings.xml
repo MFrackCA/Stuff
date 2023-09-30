@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">mortgage_calculator_app</string>
+    <string name="action_settings">Settings</string>
+    <string name="home_screen">OntarioTech Mortgage</string>
+    <string name="monthly_payments">OntarioTech Mortgage</string>
+    <string name="next">Next</string>
+    <string name="recalculate">Recalculate</string>
+    <string name="mortgage">Mortgage Principal Amount</string>
+    <string name="interest">Interest Rate</string>
+    <string name="Payment_freq">Payment Frequency</string>
+    <string name="Amortization">Amortization Period </string>
+    <string name="Calculate">Calculate</string>
+    <string name="intent">Call For Appointment</string>
+</resources>
