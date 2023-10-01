@@ -32,19 +32,24 @@ public class SecondFragment extends Fragment {
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
         // Get values from view 1
         Bundle data = getArguments();
-
         MortgageCalculator mc = (MortgageCalculator) data.getSerializable("User_input");
 
         // Set Views for Mortgage payment schedule
-        binding.v2principal.setText(String.valueOf((double) mc.getPrincipal()));
-        binding.v2amortization.setText(String.valueOf((int) mc.getAmortization()) + " Years");
-        binding.v2interest.setText(String.valueOf((double) mc.getInterest()) + "%");
-        binding.v2monthly.setText("$"+ String.valueOf((int) mc.monthlyPayment()));
 
+        double interest = mc.getInterest();
+        double monthlyPayment = mc.monthlyPayment();
+
+        String interestString = String.format("%.2f%%", interest);
+        String monthlyPaymentString = String.format("$%.2f", monthlyPayment);
+
+        binding.v2interest.setText(interestString);
+        binding.v2monthly.setText(monthlyPaymentString);
+        binding.v2principal.setText(String.valueOf((int) mc.getPrincipal()));
+        binding.v2amortization.setText(String.valueOf((int) mc.getAmortization()) + " Years");
+
+        //Intent call Phone Number
         binding.intent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
